@@ -9,7 +9,19 @@ Las funcionalidades deben estar implementadas con funciones anónimas*/
 
 
 //creamos el objeto libro
+var libros = [];
 
+window.onload = function() {
+     text = localStorage.getItem("json");
+     hola =JSON.parse(text);
+
+    for (let index = 0; index < hola.length; index++) {
+        let libro = new Libro(hola[index].titulo,hola[index].autor,hola[index].editorial);
+        libros.push(libro);
+        
+    }
+    
+  };
 
   
 
@@ -49,11 +61,14 @@ btnAgregar.onclick = () =>{
     let titulo = document.getElementById("titulo").value;
     let autor = document.getElementById("autor").value;
     let editorial = document.getElementById("editorial").value;
-
-
+    
     var libro = new Libro(titulo,autor,editorial);
-  
     libros.push(libro);
+    myJSON =JSON.stringify(libros);
+    
+    localStorage.setItem("json", myJSON);
+
+    
 
 }
 
@@ -78,28 +93,17 @@ btnListar.onclick=()=>{
     
         var p = document.createElement("div");
      
-    p.textContent= "Titulo: "+libros[index].getTitulo + " Autor: " +libros[index].getAutor+" Editorial: "+libros[index].getEditorial ;
+    p.innerHTML= "Titulo: "+libros[index].getTitulo + " Autor: " +libros[index].getAutor+" Editorial: "+libros[index].getEditorial+ " "  + '<input type="button" value="eliminar" name="" id="eliminar" >';
+ 
+
      div.appendChild(p);
+
    
     }
 
 
 
     
-}
-
-btnOtitulo.onclick = () =>{
-   
-    libros.sort(function (a, b) {
-        if (a.getTitulo > b.getTitulo) {
-          return 1;
-        }
-        if (a.getTitulo < b.getTitulo) {
-          return -1;
-        }
-        // a must be equal to b
-        return 0;
-      });
 }
 
 btnOautor.onclick = () =>{
@@ -127,4 +131,10 @@ btnOeditorial.onclick = ()  => {
         return 0;
       });
 }
+
+window.addEventListener('beforeunload', function (e) {
+
+
+
+});
 
