@@ -104,10 +104,10 @@ btnOtitulo.onclick = () =>{
 
 btnOautor = () =>{
     libros.sort(function (a, b) {
-        if (a.getTitulo > b.getTitulo) {
+        if (a.getAutor > b.getAutor) {
           return 1;
         }
-        if (a.getTitulo < b.getTitulo) {
+        if (a.getAutor < b.getAutor) {
           return -1;
         }
         // a must be equal to b
@@ -117,10 +117,10 @@ btnOautor = () =>{
 
 btnOeditorial = ()  => {
     libros.sort(function (a, b) {
-        if (a.getTitulo > b.getTitulo) {
+        if (a.getEditorial > b.getEditorial) {
           return 1;
         }
-        if (a.getTitulo < b.getTitulo) {
+        if (a.getEditorial < b.getEditorial) {
           return -1;
         }
         // a must be equal to b
