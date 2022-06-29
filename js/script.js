@@ -102,7 +102,7 @@ btnOtitulo.onclick = () =>{
       });
 }
 
-btnOautor = () =>{
+btnOautor.onclick = () =>{
     libros.sort(function (a, b) {
         if (a.getAutor > b.getAutor) {
           return 1;
@@ -115,7 +115,7 @@ btnOautor = () =>{
       });
 }
 
-btnOeditorial = ()  => {
+btnOeditorial.onclick = ()  => {
     libros.sort(function (a, b) {
         if (a.getEditorial > b.getEditorial) {
           return 1;
