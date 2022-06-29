@@ -39,6 +39,9 @@ class Libro {
 const btnAgregar = document.getElementById('agregar');
 const btnEliminar = document.getElementById('eliminar');
 const btnListar = document.getElementById("listar");
+const btnOtitulo = document.getElementById("oTitulo");
+const btnOautor = document.getElementById("oAutor");
+const btnOeditorial = document.getElementById("oEditorial");
 
 var libros = [];
 
@@ -59,6 +62,8 @@ btnEliminar.onclick = () =>{
     libros.pop();
 }
 var div = document.getElementById("tabla");
+
+
 btnListar.onclick=()=>{
     if(div.childNodes.length >0){
       
@@ -79,5 +84,47 @@ btnListar.onclick=()=>{
     }
 
 
+
     
 }
+
+btnOtitulo.onclick = () =>{
+   
+    libros.sort(function (a, b) {
+        if (a.getTitulo > b.getTitulo) {
+          return 1;
+        }
+        if (a.getTitulo < b.getTitulo) {
+          return -1;
+        }
+        // a must be equal to b
+        return 0;
+      });
+}
+
+btnOautor = () =>{
+    libros.sort(function (a, b) {
+        if (a.getTitulo > b.getTitulo) {
+          return 1;
+        }
+        if (a.getTitulo < b.getTitulo) {
+          return -1;
+        }
+        // a must be equal to b
+        return 0;
+      });
+}
+
+btnOeditorial = ()  => {
+    libros.sort(function (a, b) {
+        if (a.getTitulo > b.getTitulo) {
+          return 1;
+        }
+        if (a.getTitulo < b.getTitulo) {
+          return -1;
+        }
+        // a must be equal to b
+        return 0;
+      });
+}
+
