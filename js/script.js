@@ -75,6 +75,9 @@ btnAgregar.onclick = () =>{
 
 btnEliminar.onclick = () =>{
     libros.pop();
+    myJSON =JSON.stringify(libros);
+    
+    localStorage.setItem("json", myJSON);
 }
 var div = document.getElementById("tabla");
 
